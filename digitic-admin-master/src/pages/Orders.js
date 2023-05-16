@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Table } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { getOrders } from "../features/auth/authSlice";
+// import { getOrders } from "../features/auth/authSlice";
 const columns = [
   {
     title: "SNo",
@@ -38,10 +38,10 @@ const columns = [
 ];
 
 const Orders = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getOrders());
-  }, []);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getOrders());
+  // }, []);
   const orderState = useSelector((state) => state.auth.orders);
 
   const data1 = [];

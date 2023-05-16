@@ -1,15 +1,15 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import CustomInput from "../components/CustomInput";
 
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "react-quill/dist/quill.snow.css";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { getBrands } from "../features/brand/brandSlice";
-import { getCategories } from "../features/pcategory/pcategorySlice";
-import { getColors } from "../features/color/colorSlice";
+// import { getBrands } from "../features/brand/brandSlice";
+// import { getCategories } from "../features/pcategory/pcategorySlice";
+// import { getColors } from "../features/color/colorSlice";
 
 import Dropzone from "react-dropzone";
 import {uploadImg } from "../features/upload/uploadSlice";
@@ -34,17 +34,17 @@ const Addproduct = () => {
   const [color, setColor] = useState([]);
   // const [images, setImages] = useState([]);
   console.log(color);
-  useEffect(() => {
-    dispatch(getBrands());
-    dispatch(getCategories());
-    dispatch(getColors());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getBrands());
+  //   dispatch(getCategories());
+  //   dispatch(getColors());
+  // }, []);
 
   // const brandState = useSelector((state) => state.brand.brands);
   // const catState = useSelector((state) => state.pCategory.pCategories);
   const colorState = useSelector((state) => state.color.colors);
   const imgState = useSelector((state) => state.upload.images);
-  const newProduct = useSelector((state) => state.product);
+  // const newProduct = useSelector((state) => state.product);
   // const { isSuccess, isError, isLoading, createdProduct } = newProduct;
   // useEffect(() => {
   //   if (isSuccess && createdProduct) {
@@ -69,10 +69,10 @@ const Addproduct = () => {
     });
   });
 
-  useEffect(() => {
-    // formik.values.color = color ? color : " ";
-    formik.values.images = img;
-  }, [ img]);
+  // useEffect(() => {
+  //   // formik.values.color = color ? color : " ";
+  //   formik.values.images = img;
+  // }, [img]);
   const formik = useFormik({
     initialValues: {
       title: "",
@@ -95,10 +95,10 @@ const Addproduct = () => {
       }, 3000);
     },
   });
-  const handleColors = (e) => {
-    setColor(e);
-    console.log(color);
-  };
+  // const handleColors = (e) => {
+  //   setColor(e);
+  //   console.log(color);
+  // };
   return (
     <div>
       <h3 className="mb-4 title">Add Train</h3>

@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Table } from "antd";
 import { BiEdit } from "react-icons/bi";
 import { AiFillDelete } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../features/product/productSlice";
+import { useSelector } from "react-redux";
+// import { getProducts } from "../features/product/productSlice";
 import { Link } from "react-router-dom";
 const columns = [
   {
@@ -27,10 +27,10 @@ const columns = [
 ];
 
 const Productlist = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, []);
   const productState = useSelector((state) => state.product.products);
   const data1 = [];
   for (let i = 0; i < productState.length; i++) {
