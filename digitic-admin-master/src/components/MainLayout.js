@@ -2,22 +2,19 @@ import React, { useState } from "react";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import {
   AiOutlineDashboard,
-  AiOutlineShoppingCart,
+
   AiOutlineUser,
-  AiOutlineBgColors,
+
   AiOutlineLogout,
 } from "react-icons/ai";
 import {WiTrain} from 'react-icons/wi'
-import { RiCouponLine } from "react-icons/ri";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { ImBlog } from "react-icons/im";
-import { IoIosNotifications } from "react-icons/io";
-import { FaClipboardList, FaBloggerB } from "react-icons/fa";
-import { SiBrandfolder } from "react-icons/si";
-import { BiCategoryAlt } from "react-icons/bi";
+
+import { FaClipboardList} from "react-icons/fa";
+
 import { Layout, Menu, theme } from "antd";
 import { useNavigate } from "react-router-dom";
 const { Header, Sider, Content } = Layout;
@@ -41,7 +38,7 @@ const MainLayout = () => {
           mode="inline"
           defaultSelectedKeys={[""]}
           onClick={({ key }) => {
-            if (key == "signout") {
+            if (key === "signout") {
             } else {
               navigate(key);
             }
